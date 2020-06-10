@@ -22,7 +22,7 @@ let persons = {
     birthDate: "Jan 5, 1925",
     gender: "female", 
     };
-// 3. Use a for...in loop and if statement to console.log the value associated with the key birthDate if the birth year is an odd number.
+// 3. Use a for...in loop and if statement to console.log the value associated with the key birthD
 function PersonProps() {
     this.birthDate = 'Jan 5, 1925';
   }
@@ -33,7 +33,7 @@ function PersonProps() {
       console.log(`obj.${prop} = ${obj[prop]}`);
     } 
   }
-// 4. Create an arrayOfPersons that contains multiple objects. You can simply copy/paste the person object you made above multiple times. Feel free to change the values to reflect multiple people you might have in your database.
+// 4. Create an arrayOfPersons that contains multiple objects. You can simply copy/paste the perso
 arrayOfPersons: [
     {
         name: "John",
@@ -61,7 +61,19 @@ arrayOfPersons: [
     }
 ]
 // 5. Use .map() to map over the arrayOfPersons and console.log() their information.
-
+var info = arrayofPersons.map(function(a) {
+  return {name: a.name, gender: a.gender, birthday: a.birthday};
+  })
+      console.log(info);
 // 6. Use .filter() to filter the persons array and console.log only males in the array.
+var males = arrayofPersons.filter(men => {
+  return men.gender === 'male';
+})
 
-// 7. Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+console.log(males);
+// 7. Use .filter() to filter the persons array and console.log only people that were born before 
+let older = arrayofPersons.filter(val => {
+  return val.birthday < 1990;
+});
+
+console.log(older);
