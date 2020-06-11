@@ -72,8 +72,11 @@ var males = arrayofPersons.filter(men => {
 
 console.log(males);
 // 7. Use .filter() to filter the persons array and console.log only people that were born before 
-let older = arrayofPersons.filter(val => {
-  return val.birthday < 1990;
-});
+var startDate = new Date("Jan 1, 1980");
+var endDate = new Date("Jan 1, 1990");
 
-console.log(older);
+var older = arrayofPersons.filter(a => {
+  var date = new Date(a.birthday);
+  return (date >= startDate && date <= endDate);
+});
+console.log(older)
